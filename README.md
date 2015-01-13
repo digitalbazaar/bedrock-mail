@@ -1,0 +1,2 @@
+# bedrock-mail
+Bedrock mail
