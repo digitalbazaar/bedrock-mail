@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mail",
-  "version": "0.1.0",
+  "version": "0.1.1-dev",
   "description": "Bedrock mail",
   "main": "index.js",
   "scripts": {
