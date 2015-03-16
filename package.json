@@ -2,7 +2,7 @@
   "name": "bedrock-mail",
   "version": "0.1.1-dev",
   "description": "Bedrock mail",
-  "main": "index.js",
+  "main": "./lib/mail",
   "scripts": {
     "test": "node test.js"
   },
@@ -33,6 +33,5 @@
   },
   "directories": {
     "lib": "./lib"
-  },
-  "main": "./lib/mail"
+  }
 }
