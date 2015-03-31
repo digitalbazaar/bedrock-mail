@@ -93,9 +93,43 @@ data from the `getValue` trigger. Extra event data is also used.
 For documentation on configuration, see [config.js](./lib/config.js) and the
 quick example above.
 
-## How It Works
+## API
 
-TODO
+### registerTrigger(name, trigger(event, callback))
+
+Register a "trigger" that can be run during mail events. This trigger can be
+used to update event data.
+
+```js
+brMail.registerTrigger('getValue', function(event, callback) {
+  // custom code run for trigger
+  // for example, get a value for the email event
+  myLib.getValue(
+    null, event.details.valueId, function(err, value) {
+    if(!err) {
+      event.details.value = value;
+    }
+    callback(err);
+  });
+});
+```
+
+### send(id, vars, callback)
+
+Directly send mail using a specific template id and vars. Prefer using the
+event system.
+
+```js
+brMail.send('a-template-id', {...}, callback);
+```
+
+### event interface
+
+Use the config system to setup mail events, associated template ids, and
+filenames for templates. This interface is preferred to the direct `send` API
+since it can run asynchronously.
+
+See the Quick Example above for configuration and use.
 
 [bedrock]: https://github.com/digitalbazaar/bedrock
 [Swig]: https://paularmstrong.github.io/swig/
