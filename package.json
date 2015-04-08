@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mail",
-  "version": "0.1.1-dev",
+  "version": "1.0.0",
   "description": "Bedrock mail",
   "main": "./lib/mail",
   "scripts": {
@@ -29,7 +29,7 @@
     "swig": "~1.4.2"
   },
   "peerDependencies": {
-    "bedrock": "~0.3.0"
+    "bedrock": "^1.0.0"
   },
   "directories": {
     "lib": "./lib"
