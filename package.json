@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
-    "async": "^1.4.2",
-    "emailjs": "~0.3.2",
-    "mailparser": "~0.4.8",
-    "swig": "~1.4.2"
+    "async": "^1.5.2",
+    "emailjs": "^1.0.0",
+    "mailparser": "~0.5.3",
+    "swig": "^1.4.2"
   },
   "peerDependencies": {
     "bedrock": "^1.0.0"
