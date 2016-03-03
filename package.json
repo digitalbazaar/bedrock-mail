@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mail",
-  "version": "1.0.2-dev",
+  "version": "2.0.0-dev",
   "description": "Bedrock mail",
   "main": "./lib/mail",
   "scripts": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
     "async": "^1.5.2",
+    "bedrock": "^1.0.0",
     "emailjs": "^1.0.0",
     "mailparser": "~0.5.3",
     "swig": "^1.4.2"

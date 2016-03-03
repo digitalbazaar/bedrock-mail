@@ -5,6 +5,10 @@ in response to events. Data used in the templates comes from both data in the
 events and from "triggers" that are run to load data for the event. Templates
 are written using [Swig][].
 
+## Requirements
+
+- npm v3+
+
 ## Quick Examples
 
 ```
