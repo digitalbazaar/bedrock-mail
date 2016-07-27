@@ -1,5 +1,7 @@
 # bedrock-mail ChangeLog
 
+## [2.0.2] - 2016-07-27
+
 ### Fixed
 - Use `html` key to retrieve parsed HTML, not `text`.
 
