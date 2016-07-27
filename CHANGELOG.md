@@ -1,6 +1,7 @@
 # bedrock-mail ChangeLog
 
-## [Unreleased]
+### Fixed
+- Use `html` key to retrieve parsed HTML, not `text`.
 
 ## [2.0.1] - 2016-03-15
 
@@ -23,9 +24,3 @@
 ## 0.1.0 (up to early 2015)
 
 - See git history for changes.
-
-[Unreleased]: https://github.com/digitalbazaar/bedrock-mail/compare/2.0.1...HEAD
-[2.0.1]: https://github.com/digitalbazaar/bedrock-mail/compare/2.0.0...2.0.1
-[2.0.0]: https://github.com/digitalbazaar/bedrock-mail/compare/1.0.1...2.0.0
-[1.0.1]: https://github.com/digitalbazaar/bedrock-mail/compare/1.0.0...1.0.1
-[1.0.0]: https://github.com/digitalbazaar/bedrock-mail/compare/0.1.0...1.0.0
