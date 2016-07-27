@@ -3,7 +3,7 @@
 ## [2.0.3] - 2016-07-27
 
 ### Fixed
-- Ensure `text` is sent along with `html` and uses proper content-type.
+- Ensure `text` is sent along with `html` and use proper content-type.
 
 ## [2.0.2] - 2016-07-27
 
