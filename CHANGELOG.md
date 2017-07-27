@@ -1,5 +1,9 @@
 # bedrock-mail ChangeLog
 
+### Changed
+- Update async dependency.
+- Use child logger.
+
 ## 2.0.3 - 2016-07-27
 
 ### Fixed
