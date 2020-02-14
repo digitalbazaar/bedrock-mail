@@ -1,0 +1,31 @@
+{
+  "name": "bedrock-mail-test",
+  "version": "0.0.1-0",
+  "description": "Bedrock mail test",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "node --preserve-symlinks index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-mail"
+  },
+  "keywords": [
+    "bedrock"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-mail/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-mail",
+  "dependencies": {
+    "bedrock": "^3.0.1",
+    "bedrock-mail": "file:..",
+    "qrcode": "^1.4.4"
+  }
+}

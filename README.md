@@ -1,13 +1,13 @@
 # bedrock-mail
 
-A [bedrock][] module that allows you to send automated, template-based emails
+A [Bedrock][] module that allows you to send automated, template-based emails
 in response to events. Data used in the templates comes from both data in the
 events and from "triggers" that are run to load data for the event. Templates
-are written using [Swig][].
+can be written in any language supported by [email-templates][].
 
 ## Requirements
 
-- npm v3+
+- An available [nodemailer][] transport (SMTP, AWS SES, etc).
 
 ## Quick Examples
 
@@ -16,124 +16,111 @@ npm install bedrock-mail
 ```
 
 ```js
-var bedrock = require('bedrock');
-var brMail = require('bedrock-mail');
+const bedrock = require('bedrock');
+const brMail = require('bedrock-mail');
+const {config} = bedrock;
 
-// OPTIONAL: add triggers in your module init function
-brMail.registerTrigger('getValue', function(event, callback) {
-  // custom code run for trigger
-  // for example, get a value for the email event
-  myLib.getValue(
-    null, event.details.valueId, function(err, value) {
-    if(!err) {
-      event.details.value = value;
-    }
-    callback(err);
-  });
-});
-
-// setup events
-bedrock.config.mail.events.push({
-  type: 'myModule.myEvent',
-  // email for admin
-  template: 'myModule.myEvent'
-}, ...);
-var ids = [
-  'myModule.myEvent',
-  ...
-];
-ids.forEach(function(id) {
-  config.mail.templates.config[id] = {
-    // adjust to point to your module email templates
-    filename: path.join(__dirname, '..', 'email-templates', id + '.tpl')
-  };
-});
-// can set values for use in all events
-bedrock.config.mail.vars.service = {
-  name: 'My Service'
-};
-bedrock.config.mail.vars.support = {
-  name: 'My Service'
-  email: 'support@example.com'
+// configure default mail behavior
+// defaults to send if NODE_ENV is 'production'
+//config.mail.send = true;
+// defaults for every message
+config.mail.message = {
+  from: 'My Company Support <support@example.com>'
 };
 
-// send email
+// setup SMTP transport
+bedrock.config.mail.transport = {
+  type: 'smtp',
+  options: {
+    host: 'mail.example.com'
+  },
+  verify: true
+};
+
+// setup default template locals for all mails
+bedrock.config.mail.locals.service = {
+  name: 'My Service',
+  url: 'https://example.com/'
+};
+
+// schedule generic event
 bedrock.events.emitLater({
   type: 'myModule.myEvent',
   details: {
-    // optional list of triggers to run
-    triggers: ['getIdentity', 'getValue'],
-    // optional event specific data
-    valueId: aValueId,
-    myData1: 'custom data 1',
-    myData2: 'custom data 2',
-    ...
+    accountId: 1234,
+    image: 'https://example.com/images/2020-01-01.png'
   }
 });
-```
 
-Example template `myModule.myEvent.tpl`:
-```
-To: {{identity.email}}
-From: "{{service.name}} {{support.name}}" <{{support.email}}>
-Subject: An event happened on {{service.name}}!
-
-Hello {{identity.label}},
-
-An event happened!
-Value: {{value}}.
-My data 1: {{myData1}}.
-My data 2: {{myData2}}.
-
-If you have any questions or comments please contact {{support.email}}.
-```
-
-This template depends on the `service` object and properties to be setup on a
-global level. It uses identity data from the `getIdentity` trigger and value
-data from the `getValue` trigger. Extra event data is also used.
-
-## Configuration
-
-For documentation on configuration, see [config.js](./lib/config.js) and the
-quick example above.
-
-## API
-
-### registerTrigger(name, trigger(event, callback))
-
-Register a "trigger" that can be run during mail events. This trigger can be
-used to update event data.
-
-```js
-brMail.registerTrigger('getValue', function(event, callback) {
-  // custom code run for trigger
-  // for example, get a value for the email event
-  myLib.getValue(
-    null, event.details.valueId, function(err, value) {
-    if(!err) {
-      event.details.value = value;
+// handle generic even and send email
+bedrock.events.on('myModule.myEvent', async event => {
+  const account = await getAccount(event.accountId);
+  brMail.send({
+    template: 'myModule.myEvent',
+    message: {
+      to: account.email
+    },
+    locals: {
+      image: event.image
     }
-    callback(err);
   });
 });
 ```
 
-### send(id, vars, callback)
-
-Directly send mail using a specific template id and vars. Prefer using the
-event system.
-
-```js
-brMail.send('a-template-id', {...}, callback);
+Example [EJS][] subject template `events/myModule.myEvent/subject.ejs`:
+```ejs
+Here's your daily image from <%= service.name %>!
 ```
 
-### event interface
+Example [EJS][] html template `events/myModule.myEvent/html.ejs`:
+```ejs
+<html>
+  <body>
+    <p>Hello <%= account.name %>,</p>
+    <p>Here's your daily image:</p>
+    <p><img src="<%= image %>"></p>
+    <hr/>
+    <p><a href="<%= service.url %>"><%= service.name %></a></p>
+  </body>
+</html>
+```
 
-Use the config system to setup mail events, associated template ids, and
-filenames for templates. This interface is preferred to the direct `send` API
-since it can run asynchronously.
+Example [EJS][] text template if the auto-generated one from HTML is not
+sufficient `events/myModule.myEvent/text.ejs`:
+```ejs
+Hello <%= account.name %>,
 
-See the Quick Example above for configuration and use.
+Here's a link to your daily image:
+<%= image %>
 
-[bedrock]: https://github.com/digitalbazaar/bedrock
-[Swig]: https://paularmstrong.github.io/swig/
+-- 
+<%= service.name %>
+<%= service.url %>
+```
+
+This template depends on the `service` object and properties to be setup on a
+global level. See the [nodemailer][] docs if you want to add attachments,
+embedded images, or use other features.
+
+See the [test](./test) directory for a full example.
+
+## Configuration
+
+For documentation on configuration, see [config.js](./lib/config.js), the
+example above, the [test](./test) example, and the [nodemailer][] and
+[email-templates][] documentation.
+
+## API
+
+### send({template, message, locals})
+
+Send mail using a specific template (name or path), message options, and local
+vars.
+
+```js
+await brMail.send('my-template', {to: 'someone@example.com'}, {foo: 'bar'});
+```
+
+[Bedrock]: https://github.com/digitalbazaar/bedrock
+[email-templates]: https://email-templates.js.org/
+[nodemailer]: https://nodemailer.com/

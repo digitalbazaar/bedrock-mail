@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <style>
+      .code {
+        font-size: larger;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hi <%= account.name %>,</p><p>Here is your <%= service.name %> secret code:</p>
+    <p>Code: <span class="code"><%= secretCode %></span></p>
+    <p>URL: <a href="<%= secretCodeUrl %>"><%= secretCodeUrl %></a></p>
+    <p>QR Code (Inline): <img src="<%= secretCodeQRDataUrl %>"></p>
+    <p>QR Code (Attachment): <img src="cid:code"></p>
+    <hr/>
+    <p><a href="<%= service.url %>"><%= service.name %></a></p>
+  </body>
+</html>
