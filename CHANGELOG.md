@@ -1,5 +1,17 @@
 # bedrock-mail ChangeLog
 
+## 3.0.0 - 2020-xx-xx
+
+### Changed
+- Update dependencies, modernize, and change everything.
+- **BREAKING**: Switch to `nodemailer` and `email-templates`.
+- **BREAKING**: Drop direct SWIG template support.
+- **BREAKING**: Drop triggers.
+- **BREAKING**: Change API.
+  - Changed to async/await.
+  - See docs.
+- Default to 'ejs' templates.
+
 ## 2.0.4 - 2017-07-27
 
 ### Changed
