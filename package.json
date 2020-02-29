@@ -28,8 +28,8 @@
   "dependencies": {
     "app-root-path": "^3.0.0",
     "ejs": "^3.0.1",
-    "email-templates": "^7.0.2",
-    "nodemailer": "^6.4.2"
+    "email-templates": "^7.0.4",
+    "nodemailer": "^6.4.3"
   },
   "peerDependencies": {
     "bedrock": "1.6.0 - 3.x"
@@ -39,6 +39,6 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-config-digitalbazaar": "^2.2.0"
+    "eslint-config-digitalbazaar": "^2.3.0"
   }
 }
