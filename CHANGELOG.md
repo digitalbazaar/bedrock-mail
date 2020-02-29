@@ -9,8 +9,11 @@
 - **BREAKING**: Drop triggers.
 - **BREAKING**: Change API.
   - Changed to async/await.
+  - Can setup transport and verify at runtime.
   - See docs.
 - Default to 'ejs' templates.
+- Add logging options.
+- Add main app override CLI options: --mail-{to,preview,send,log}.
 
 ## 2.0.4 - 2017-07-27
 
