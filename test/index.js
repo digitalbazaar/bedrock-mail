@@ -7,7 +7,7 @@ const {config} = bedrock;
 const qrcode = require('qrcode');
 
 bedrock.events.on('bedrock-cli.init', async () => {
-  // NOTE: see also the main options: --mail-{send,preview,log}
+  // NOTE: see also the main options: --mail-{send,preview,log,to}
   bedrock.program.option('--account <accountId>',
     'Account id to send to.', String, 'default');
   bedrock.program.option('--to <email>',
