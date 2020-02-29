@@ -7,34 +7,13 @@ const {config} = bedrock;
 const qrcode = require('qrcode');
 
 bedrock.events.on('bedrock-cli.init', async () => {
-  bedrock.program.option('--send <mode>',
-    'Send email' +
-    ' (true, false, t, f, 0, 1).',
-    /^(true|false|t|f|0|1|default)$/i, 'default');
-  bedrock.program.option('--preview <mode>',
-    'Preview email' +
-    ' (true, false, t, f, 0, 1).',
-    /^(true|false|t|f|0|1|default)$/i, 'default');
+  // NOTE: see also the main options: --mail-{send,preview,log}
   bedrock.program.option('--account <accountId>',
     'Account id to send to.', String, 'default');
   bedrock.program.option('--to <email>',
     'Override target email.', String, null);
   bedrock.program.option('--code <code>',
     'Secret code.', String, '12345');
-});
-
-function b(value) {
-  const v = value.toLowerCase();
-  return (v === true || v === 'true' || v === 't' || v === '1');
-}
-
-bedrock.events.on('bedrock-cli.ready', async () => {
-  if(bedrock.program.send !== 'default') {
-    config.mail.send = b(bedrock.program.send);
-  }
-  if(bedrock.program.preview !== 'default') {
-    config.mail.preview = b(bedrock.program.preview);
-  }
 });
 
 const cfg = bedrock.config['mail-test'] = {};
