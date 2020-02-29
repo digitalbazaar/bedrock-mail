@@ -10,8 +10,6 @@ bedrock.events.on('bedrock-cli.init', async () => {
   // NOTE: see also the main options: --mail-{send,preview,log,to}
   bedrock.program.option('--account <accountId>',
     'Account id to send to.', String, 'default');
-  bedrock.program.option('--to <email>',
-    'Override target email.', String, null);
   bedrock.program.option('--code <code>',
     'Secret code.', String, '12345');
 });
@@ -42,11 +40,6 @@ bedrock.events.on('mail-test.notify', async event => {
   // lookup account
   const account = await getAccount({id: event.accountId});
   console.log('ACCOUNT', account);
-  // allow override for testing
-  if(bedrock.program.to) {
-    account.email = bedrock.program.to;
-  }
-  console.log('TARGET', account);
   const secretCode = event.secretCode;
   const secretCodeUrl = `https://example.com/private?code=${secretCode}`;
   const secretCodeQRDataUrl = await qrcode.toDataURL(secretCodeUrl);
