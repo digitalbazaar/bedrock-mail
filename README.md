@@ -153,6 +153,17 @@ await brMail.send('my-template', {to: 'someone@example.com'}, {foo: 'bar'});
 The [test](./test) directory example tool can be used to test transports and
 templates.
 
+## CLI Overrides
+
+This library adds global CLI options that can be useful during development to
+override config values.  Boolean options are case-insensitve: `default`,
+`false`, `f`, `0`, `true`, `t`, `1`.
+
+- `--mail-to ADDRESS`: Override mail target address for **all** emails.
+- `--mail-preview BOOLEAN`: Override previewing mail mode.
+- `--mail-send BOOLEAN`: Override sending mail mode.
+- `--mail-log BOOLEAN`: Override logging mode to print headers and text body.
+
 [Bedrock]: https://github.com/digitalbazaar/bedrock
 [EJS]: https://ejs.co/
 [email-templates]: https://email-templates.js.org/
