@@ -45,6 +45,18 @@ To override pieces while testing, use `--help` to see all options:
 
 ```
 node index.js --config my-send.js --account demo
-node index.js --config my-send.js --to me@example.com
-node index.js --config my-send.js --account demo --preview true --send false
+node index.js --config my-send.js --mail-to me@example.com
+node index.js --config my-send.js --account demo --mail-preview true --mail-send false
 ```
+
+## Template Testing
+
+Templates from other projects can be tested using the `--template` option.  The
+template path needs to be absolute or relative to the test template directory.
+Special template locals can be added to your config file in
+`bedrock.config.mail.locals`.
+
+```
+node index.js --config my-test.js --mail-to me@example.com --mail-send 0 --mail-preview 1 --mail-log 1 --template ../../sibling-project/emails/my-template
+```
+
