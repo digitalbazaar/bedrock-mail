@@ -102,6 +102,21 @@ This template depends on the `service` object and properties to be setup on a
 global level. See the [nodemailer][] docs if you want to add attachments,
 embedded images, or use other features.
 
+[EJS][] includes work with file paths relative to the template. For example,
+the text template `example` that includes a text footer:
+`example/text.ejs`:
+```ejs
+Welcome to our service!
+
+<%- include('../common/footer.text.ejs') %>
+```
+`common/footer.text.ejs`:
+```ejs
+-- 
+Example Service
+https://example.com/
+```
+
 See the [test](./test) directory for a full example.
 
 ## Configuration
@@ -130,6 +145,11 @@ vars.
 ```js
 await brMail.send('my-template', {to: 'someone@example.com'}, {foo: 'bar'});
 ```
+
+## Testing
+
+The [test](./test) directory example tool can be used to test transports and
+templates.
 
 [Bedrock]: https://github.com/digitalbazaar/bedrock
 [email-templates]: https://email-templates.js.org/
