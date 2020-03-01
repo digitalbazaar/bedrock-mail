@@ -152,5 +152,6 @@ The [test](./test) directory example tool can be used to test transports and
 templates.
 
 [Bedrock]: https://github.com/digitalbazaar/bedrock
+[EJS]: https://ejs.co/
 [email-templates]: https://email-templates.js.org/
 [nodemailer]: https://nodemailer.com/
