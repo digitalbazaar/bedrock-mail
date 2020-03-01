@@ -104,12 +104,14 @@ embedded images, or use other features.
 
 [EJS][] includes work with file paths relative to the template. For example,
 the text template `example` that includes a text footer:
+
 `example/text.ejs`:
 ```ejs
 Welcome to our service!
 
 <%- include('../common/footer.text.ejs') %>
 ```
+
 `common/footer.text.ejs`:
 ```ejs
 -- 
