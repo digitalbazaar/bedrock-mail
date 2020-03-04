@@ -100,7 +100,7 @@ bedrock.events.on('bedrock.ready', async () => {
   console.log('emitting event');
   // use special event for main test, else use generic event
   const eventName =
-    bedrock.program.tempalte === 'mail-test.notify' ?
+    bedrock.program.template === 'mail-test.notify' ?
       'mail-test.notify' : 'template-test';
   // could use emitLater(), awaiting for this test
   await bedrock.events.emit(eventName, {
