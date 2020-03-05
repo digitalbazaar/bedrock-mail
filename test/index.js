@@ -48,24 +48,28 @@ bedrock.events.on('mail-test.notify', async event => {
   const secretCodeUrl = `https://example.com/private?code=${secretCode}`;
   const secretCodeQRDataUrl = await qrcode.toDataURL(secretCodeUrl);
   const secretCodeQRString = await qrcode.toString(secretCodeUrl);
-  const mail = await brMail.send({
-    template: event.template,
-    message: {
-      to: account.email,
-      attachments: [{
-        cid: 'code',
-        href: secretCodeQRDataUrl
-      }]
-    },
-    locals: {
-      account,
-      secretCode,
-      secretCodeUrl,
-      secretCodeQRDataUrl,
-      secretCodeQRString
-    }
-  });
-  console.log('MAIL', mail);
+  try {
+    const mail = await brMail.send({
+      template: event.template,
+      message: {
+        to: account.email,
+        attachments: [{
+          cid: 'code',
+          href: secretCodeQRDataUrl
+        }]
+      },
+      locals: {
+        account,
+        secretCode,
+        secretCodeUrl,
+        secretCodeQRDataUrl,
+        secretCodeQRString
+      }
+    });
+    console.log('MAIL', mail);
+  } catch(error) {
+    console.log('ERROR', {error});
+  }
 });
 
 bedrock.events.on('template-test', async event => {
@@ -74,17 +78,21 @@ bedrock.events.on('template-test', async event => {
   const account = await getAccount({id: event.accountId});
   console.log('ACCOUNT', account);
   const secretCode = event.secretCode;
-  const mail = await brMail.send({
-    template: bedrock.program.template,
-    message: {
-      to: account.email
-    },
-    locals: {
-      account,
-      secretCode
-    }
-  });
-  console.log('MAIL', mail);
+  try {
+    const mail = await brMail.send({
+      template: bedrock.program.template,
+      message: {
+        to: account.email
+      },
+      locals: {
+        account,
+        secretCode
+      }
+    });
+    console.log('MAIL', mail);
+  } catch(error) {
+    console.log('ERROR', {error});
+  }
 });
 
 bedrock.events.on('bedrock.ready', async () => {
