@@ -14,6 +14,7 @@
 - Default to 'ejs' templates.
 - Add logging options.
 - Add main app override CLI options: --mail-{to,preview,send,log}.
+- Add test program with transport debugging features.
 
 ## 2.0.4 - 2017-07-27
 
