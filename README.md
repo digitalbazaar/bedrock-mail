@@ -129,17 +129,17 @@ example above, the [test](./test) example, and the [nodemailer][] and
 
 ## API
 
-### use('transport', transport)
+### async use('transport', transport)
 
 Configure at runtime to use a specific transport configuration. Transport is
 the same format as `bedrock.config.mail.transport`.
 
-### verify()
+### async verify()
 
 Call the transport `verify()` method, if supported. See the [nodemailer][]
 documentation. Useful to check a SMTP connection works.
 
-### send({template, message, locals})
+### async send({template, message, locals})
 
 Send mail using a specific template (name or path), message options, and local
 vars.
