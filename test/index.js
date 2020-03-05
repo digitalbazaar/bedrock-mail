@@ -8,6 +8,8 @@ const qrcode = require('qrcode');
 
 bedrock.events.on('bedrock-cli.init', async () => {
   // NOTE: see also the main options: --mail-{send,preview,log,to}
+  bedrock.program.option('--transport-check',
+    'Stop after setting up transport. Useful to debug transports.');
   bedrock.program.option('--template <template>',
     'Template name or path.', String, 'mail-test.notify');
   bedrock.program.option('--account <accountId>',
@@ -87,6 +89,7 @@ bedrock.events.on('template-test', async event => {
 
 bedrock.events.on('bedrock.ready', async () => {
   console.log('OPTIONS', {
+    transportCheck: bedrock.program.transportCheck,
     template: bedrock.program.template,
     send: bedrock.program.send,
     preview: bedrock.program.preview,
@@ -97,6 +100,10 @@ bedrock.events.on('bedrock.ready', async () => {
   console.log('MAIL CONFIG', bedrock.config.mail);
   console.log('MAIL TEST CONFIG', bedrock.config['mail-test']);
   console.log('ready');
+  if(bedrock.program.transportCheck) {
+    console.log('transport check done');
+    process.exit();
+  }
   console.log('emitting event');
   // use special event for main test, else use generic event
   const eventName =
