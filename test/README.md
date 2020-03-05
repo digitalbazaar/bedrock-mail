@@ -51,7 +51,7 @@ node index.js --config my-send.js --account demo --mail-preview true --mail-send
 
 ## Template Testing
 
-Templates from other projects can be tested using the `--template` option.  The
+Templates from other projects can be tested using the `--template` option. The
 template path needs to be absolute or relative to the test template directory.
 Special template locals can be added to your config file in
 `bedrock.config.mail.locals`.
@@ -60,3 +60,10 @@ Special template locals can be added to your config file in
 node index.js --config my-test.js --mail-to me@example.com --mail-send 0 --mail-preview 1 --mail-log 1 --template ../../sibling-project/emails/my-template
 ```
 
+## Transport Testing
+
+Transports that have `verify` support can be tested by using a config that has
+`verify: true` and optionally using the `--transport-check` option. Also
+helpful for debugging is to set `debug: true` and `logging: true` transport
+options. These features can be used, for instance, to see SMTP traffic and
+diagnose issues.
