@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 3.0.0 - 2020-xx-xx
+## 3.0.0 - 2020-03-06
 
 ### Changed
 - Update dependencies, modernize, and change everything.
