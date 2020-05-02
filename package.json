@@ -5,7 +5,9 @@
   "main": "./lib/index.js",
   "scripts": {
     "test": "node test.js",
-    "lint": "eslint 'lib/*.js' test/*.js"
+    "lint": "eslint 'lib/*.js' test/*.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "app-root-path": "^3.0.0",
     "ejs": "^3.0.1",
     "email-templates": "^7.0.4",
-    "nodemailer": "^6.4.3"
+    "nodemailer": "^6.4.3",
+    "snyk": "^1.316.2"
   },
   "peerDependencies": {
     "bedrock": "1.6.0 - 3.x"
@@ -40,5 +43,6 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-digitalbazaar": "^2.3.0"
-  }
+  },
+  "snyk": true
 }
