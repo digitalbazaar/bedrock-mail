@@ -1,5 +1,11 @@
 # bedrock-mail ChangeLog
 
+## 3.0.1 -
+
+### Changed
+- Update `email-templates` dependency (was causing a 'cheerio not installed' error
+  downstream).
+
 ## 3.0.0 - 2020-03-06
 
 ### Changed
