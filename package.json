@@ -27,18 +27,18 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "ejs": "^3.0.1",
-    "email-templates": "^7.0.4",
-    "nodemailer": "^6.4.3"
+    "ejs": "^3.1.6",
+    "email-templates": "^8.0.4",
+    "nodemailer": "^6.6.0"
   },
   "peerDependencies": {
-    "bedrock": "1.6.0 - 3.x"
+    "bedrock": "4.x"
   },
   "directories": {
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-digitalbazaar": "^2.3.0"
+    "eslint": "^7.25.0",
+    "eslint-config-digitalbazaar": "^2.8.0"
   }
 }
