@@ -1,5 +1,10 @@
 # bedrock-mail ChangeLog
 
+## 3.0.2 - TBD
+
+### Fixed
+- Properly initialize the `bedrock.config.mail.locals.service` namespace.
+
 ## 3.0.1 - 2021-05-06
 
 ### Changed
