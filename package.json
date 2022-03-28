@@ -29,16 +29,19 @@
     "app-root-path": "^3.0.0",
     "ejs": "^3.1.6",
     "email-templates": "^8.0.4",
+    "esm": "^3.2.25",
     "nodemailer": "^6.6.0"
   },
   "peerDependencies": {
-    "bedrock": "^4.1.1"
+    "bedrock": "^4.5.0"
   },
   "directories": {
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-config-digitalbazaar": "^2.8.0"
+    "eslint": "^7.32.0",
+    "eslint-config-digitalbazaar": "^2.8.0",
+    "eslint-plugin-jsdoc": "^37.9.7",
+    "jsdoc-to-markdown": "^6.0.1"
   }
 }

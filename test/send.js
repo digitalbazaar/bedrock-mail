@@ -18,7 +18,7 @@ config.mail.transport = {
     //}
   }
 };
-config['mail-test'].accounts['test'] = {
+config['mail-test'].accounts.test = {
   id: 'test',
   email: 'test@example.com',
   name: 'Test Account'
