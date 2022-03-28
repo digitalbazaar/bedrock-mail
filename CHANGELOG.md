@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 3.1.0 - 2022-03-xx
+## 3.1.0 - 2022-03-28
 
 ### Changed
 - Update peer deps:
