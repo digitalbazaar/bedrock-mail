@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 4.0.0 - 2022-04-xx
+## 4.0.0 - 2022-04-04
 
 ### Changed
 - **BREAKING**: Rename package to `@bedrock/mail`.
