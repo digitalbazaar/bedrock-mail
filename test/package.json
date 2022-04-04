@@ -1,6 +1,7 @@
 {
   "name": "bedrock-mail-test",
   "version": "0.0.1-0",
+  "type": "module",
   "description": "Bedrock mail test",
   "private": true,
   "main": "index.js",
@@ -24,8 +25,8 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
-    "bedrock": "^4.5.0",
-    "bedrock-mail": "file:..",
+    "@bedrock/core": "^5.0.0",
+    "@bedrock/mail": "file:..",
     "qrcode": "^1.4.4"
   }
 }
