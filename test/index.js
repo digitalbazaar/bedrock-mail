@@ -1,10 +1,10 @@
 /*!
- * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2020-2022 Digital Bazaar, Inc. All rights reserved.
  */
-const bedrock = require('bedrock');
-const brMail = require('bedrock-mail');
+import * as bedrock from '@bedrock/core';
+import * as brMail from '@bedrock/mail';
 const {config} = bedrock;
-const qrcode = require('qrcode');
+import qrcode from 'qrcode';
 
 bedrock.events.on('bedrock-cli.init', async () => {
   // NOTE: see also the main options: --mail-{send,preview,log,to}
