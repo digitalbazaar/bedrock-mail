@@ -1,5 +1,10 @@
 # bedrock-mail ChangeLog
 
+## 5.0.1 - 2022-04-xx
+
+### Fixed
+- Fix command line option handling.
+
 ## 5.0.0 - 2022-04-29
 
 ### Changed

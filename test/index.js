@@ -80,7 +80,7 @@ bedrock.events.on('template-test', async event => {
   const secretCode = event.secretCode;
   try {
     const mail = await brMail.send({
-      template: bedrock.program.template,
+      template: bedrock.program.opts().template,
       message: {
         to: account.email
       },
@@ -96,32 +96,32 @@ bedrock.events.on('template-test', async event => {
 });
 
 bedrock.events.on('bedrock.ready', async () => {
+  const opts = bedrock.program.opts();
   console.log('OPTIONS', {
-    transportCheck: bedrock.program.transportCheck,
-    template: bedrock.program.template,
-    send: bedrock.program.send,
-    preview: bedrock.program.preview,
-    account: bedrock.program.account,
-    to: bedrock.program.to,
-    code: bedrock.program.code
+    transportCheck: opts.transportCheck,
+    template: opts.template,
+    send: opts.send,
+    preview: opts.preview,
+    account: opts.account,
+    to: opts.to,
+    code: opts.code
   });
   console.log('MAIL CONFIG', bedrock.config.mail);
   console.log('MAIL TEST CONFIG', bedrock.config['mail-test']);
   console.log('ready');
-  if(bedrock.program.transportCheck) {
+  if(opts.transportCheck) {
     console.log('transport check done');
     process.exit();
   }
   console.log('emitting event');
   // use special event for main test, else use generic event
-  const eventName =
-    bedrock.program.template === 'mail-test.notify' ?
-      'mail-test.notify' : 'template-test';
+  const eventName = opts.template === 'mail-test.notify' ?
+    'mail-test.notify' : 'template-test';
   // could use emitLater(), awaiting for this test
   await bedrock.events.emit(eventName, {
-    template: bedrock.program.template,
-    accountId: bedrock.program.account,
-    secretCode: bedrock.program.code
+    template: opts.template,
+    accountId: opts.account,
+    secretCode: opts.code
   });
   console.log('done');
   process.exit();
