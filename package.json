@@ -1,6 +1,6 @@
 {
   "name": "@bedrock/mail",
-  "version": "5.0.1",
+  "version": "5.0.2-0",
   "type": "module",
   "description": "Bedrock mail",
   "main": "./lib/index.js",
