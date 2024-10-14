@@ -29,7 +29,7 @@
   "dependencies": {
     "app-root-path": "^3.0.0",
     "ejs": "^3.1.7",
-    "email-templates": "^8.1.0",
+    "email-templates": "^12.0.1",
     "nodemailer": "^6.7.4"
   },
   "peerDependencies": {
@@ -39,9 +39,9 @@
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-digitalbazaar": "^2.8.0",
-    "eslint-plugin-jsdoc": "^37.9.7",
-    "jsdoc-to-markdown": "^7.1.1"
+    "eslint": "^8.57.1",
+    "eslint-config-digitalbazaar": "^5.2.0",
+    "eslint-plugin-jsdoc": "^50.4.1",
+    "jsdoc-to-markdown": "^9.0.2"
   }
 }
