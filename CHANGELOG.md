@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 5.1.0 - 2024-10-dd
+## 6.0.0 - 2024-10-dd
 
 ### Changed
 - Use `email-templates@12`.
