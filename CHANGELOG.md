@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.0.0 - 2025-mm-dd
+## 7.0.0 - 2025-09-22
 
 ### Changed
 - **BREAKING**: Reduce dependencies by removing unsupported/unusable template
