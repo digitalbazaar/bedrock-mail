@@ -11,7 +11,7 @@ simulates sending a secret code to an email address.
 - Account details are looked up, including name and email.
 - URL for code is created.
 - QR Code (PNG and Text) are created.
-- Mail API is called to send email using a template 
+- Mail API is called to send email using a template
 
 To run the app, either use defaults and the email will be previewed.
 
@@ -44,9 +44,9 @@ node index.js --config my-send.js
 To override pieces while testing, use `--help` to see all options:
 
 ```
-node index.js --config my-send.js --account demo
+node index.js --config my-send.js --account default
 node index.js --config my-send.js --mail-to me@example.com
-node index.js --config my-send.js --account demo --mail-preview true --mail-send false
+node index.js --config my-send.js --account default --mail-preview true --mail-send false
 ```
 
 ## Template Testing
