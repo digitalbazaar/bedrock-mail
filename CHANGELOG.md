@@ -1,9 +1,12 @@
 # bedrock-mail ChangeLog
 
-## 6.1.0 - 2025-mm-dd
+## 7.0.0 - 2025-mm-dd
 
 ### Changed
-- Reduce dependencies by removing unsupported/unusable template renderers.
+- **BREAKING**: Reduce dependencies by removing unsupported/unusable template
+  renderers. Note that this is not strictly breaking (nor expected to break
+  anything with a direct upgrade), a major release may help avoid unforeseen
+  problems with this significant upgrade.
 
 ## 6.0.0 - 2024-10-15
 
