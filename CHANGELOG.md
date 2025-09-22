@@ -1,5 +1,10 @@
 # bedrock-mail ChangeLog
 
+## 6.1.0 - 2025-mm-dd
+
+### Changed
+- Reduce dependencies by removing unsupported/unusable template renderers.
+
 ## 6.0.0 - 2024-10-15
 
 ### Changed
