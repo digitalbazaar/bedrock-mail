@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.1.1 - 2025-10-dd
+## 7.1.1 - 2025-10-09
 
 ### Fixed
 - Force override of `nodemailer` package in `preview-email` subdependency to
