@@ -1,5 +1,14 @@
 # bedrock-mail ChangeLog
 
+## 7.1.0 - 2025-mm-dd
+
+### Fixed
+- **BREAKING**: Fix a vulnerability in the `nodemailer` dependency by
+  upgrading to a new major version of that package (v7), which drops support
+  for transports that use AWS SESv1, requiring replacements that use at
+  least AWS SESv2. AES SESv2 is a replacement for SESv1 that was released
+  in 2020.
+
 ## 7.0.0 - 2025-09-22
 
 ### Changed
