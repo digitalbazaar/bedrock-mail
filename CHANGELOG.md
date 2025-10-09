@@ -1,8 +1,12 @@
 # bedrock-mail ChangeLog
 
-## 7.1.0 - 2025-mm-dd
+## 7.2.0 - 2025-mm-dd
 
-### Fixed
+### Changed
+- **BREAKING**: Workaround a vulnerability in `nodemailer` as imported into
+  `preview-email` by making `preview-email` an optional peer dependency. This
+  library is only used to preview emails, typically while using a CLI command
+  to test what emails look like prior to adding them to some deployed system.
 - **BREAKING**: Fix a vulnerability in the `nodemailer` dependency by
   upgrading to a new major version of that package (v7), which drops support
   for transports that use AWS SESv1, requiring replacements that use at

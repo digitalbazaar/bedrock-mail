@@ -31,11 +31,16 @@
     "ejs": "^3.1.10",
     "html-to-text": "^9.0.5",
     "lru-cache": "^11.2.1",
-    "nodemailer": "^7.0.9",
-    "preview-email": "^3.1.0"
+    "nodemailer": "^7.0.9"
   },
   "peerDependencies": {
-    "@bedrock/core": "^6.0.0"
+    "@bedrock/core": "^6.0.0",
+    "preview-email": "^3.1.0"
+  },
+  "peerDependenciesMeta": {
+    "preview-email": {
+      "optional": true
+    }
   },
   "directories": {
     "lib": "./lib"
