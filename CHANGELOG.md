@@ -3,15 +3,18 @@
 ## 7.2.0 - 2025-mm-dd
 
 ### Changed
-- **BREAKING**: Workaround a vulnerability in `nodemailer` as imported into
-  `preview-email` by making `preview-email` an optional peer dependency. This
-  library is only used to preview emails, typically while using a CLI command
-  to test what emails look like prior to adding them to some deployed system.
-- **BREAKING**: Fix a vulnerability in the `nodemailer` dependency by
-  upgrading to a new major version of that package (v7), which drops support
-  for transports that use AWS SESv1, requiring replacements that use at
-  least AWS SESv2. AES SESv2 is a replacement for SESv1 that was released
-  in 2020.
+- **BREAKING**: This change is breaking but done to address a vulnerability
+  and not likely to actually have breaking impact: Workaround a vulnerability
+  in `nodemailer` as imported into `preview-email` by making `preview-email`
+  an optional peer dependency. This library is only used to preview emails,
+  typically while using a CLI command to test what emails look like prior to
+  adding them to some deployed system.
+- **BREAKING**: This change is breaking but done to address a vulnerability
+  and not likely to actually have breaking impact: Fix a vulnerability in the
+  `nodemailer` dependency by upgrading to a new major version of that package
+  (v7), which drops support for transports that use AWS SESv1, requiring
+  replacements that use at least AWS SESv2. AES SESv2 is a replacement for
+  SESv1 that was released in 2020.
 
 ## 7.0.0 - 2025-09-22
 
