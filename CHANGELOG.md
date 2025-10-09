@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.2.0 - 2025-mm-dd
+## 7.1.0 - 2025-10-09
 
 ### Changed
 - **BREAKING**: This change is breaking but done to address a vulnerability
