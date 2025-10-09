@@ -1,5 +1,12 @@
 # bedrock-mail ChangeLog
 
+## 7.1.1 - 2025-10-dd
+
+### Fixed
+- Force override of `nodemailer` package in `preview-email` subdependency to
+  use non-vulnerable version and make `preview-email` a non-peer optional
+  dependency.
+
 ## 7.1.0 - 2025-10-09
 
 ### Changed
