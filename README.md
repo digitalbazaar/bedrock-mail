@@ -8,6 +8,8 @@ can be written in any language supported by [email-templates][].
 ## Requirements
 
 - An available [nodemailer][] transport (SMTP, AWS SES, etc).
+- In order to preview email, the optional dependency `preview-mail` must be
+  installed.
 
 ## Quick Examples
 
@@ -160,7 +162,8 @@ override config values.  Boolean options are case-insensitve: `default`,
 `false`, `f`, `0`, `true`, `t`, `1`.
 
 - `--mail-to ADDRESS`: Override mail target address for **all** emails.
-- `--mail-preview BOOLEAN`: Override previewing mail mode.
+- `--mail-preview BOOLEAN`: Override previewing mail mode; note that the
+  optional dependency `preview-email` must be installed to preview mail.
 - `--mail-send BOOLEAN`: Override sending mail mode.
 - `--mail-log BOOLEAN`: Override logging mode to print headers and text body.
 
