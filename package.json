@@ -34,12 +34,14 @@
     "nodemailer": "^7.0.9"
   },
   "peerDependencies": {
-    "@bedrock/core": "^6.0.0",
+    "@bedrock/core": "^6.0.0"
+  },
+  "optionalDependencies": {
     "preview-email": "^3.1.0"
   },
-  "peerDependenciesMeta": {
+  "overrides": {
     "preview-email": {
-      "optional": true
+      "nodemailer": "^7.0.9"
     }
   },
   "directories": {

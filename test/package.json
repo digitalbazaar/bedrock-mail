@@ -27,7 +27,6 @@
   "dependencies": {
     "@bedrock/core": "^6.0.0",
     "@bedrock/mail": "file:..",
-    "preview-email": "^3.1.0",
     "qrcode": "^1.4.4"
   }
 }
