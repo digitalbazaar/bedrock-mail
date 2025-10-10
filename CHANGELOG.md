@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.1.2 - 2025-10-dd
+## 7.1.2 - 2025-10-10
 
 ### Fixed
 - Replace `preview-email` dependency (which has a vulnerable subdependent)
