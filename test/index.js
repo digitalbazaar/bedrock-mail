@@ -78,6 +78,9 @@ bedrock.events.on('template-test', async event => {
   const account = await getAccount({id: event.accountId});
   console.log('ACCOUNT', account);
   const secretCode = event.secretCode;
+  const secretCodeUrl = `https://example.com/private?code=${secretCode}`;
+  const secretCodeQRDataUrl = await qrcode.toDataURL(secretCodeUrl);
+  const secretCodeQRString = await qrcode.toString(secretCodeUrl);
   try {
     const mail = await brMail.send({
       template: bedrock.program.opts().template,
@@ -86,7 +89,10 @@ bedrock.events.on('template-test', async event => {
       },
       locals: {
         account,
-        secretCode
+        secretCode,
+        secretCodeUrl,
+        secretCodeQRDataUrl,
+        secretCodeQRString
       }
     });
     console.log('MAIL', mail);
