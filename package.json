@@ -31,18 +31,12 @@
     "ejs": "^3.1.10",
     "html-to-text": "^9.0.5",
     "lru-cache": "^11.2.1",
-    "nodemailer": "^7.0.9"
+    "mailparser": "^3.7.5",
+    "nodemailer": "^7.0.9",
+    "open": "^10.2.0"
   },
   "peerDependencies": {
     "@bedrock/core": "^6.0.0"
-  },
-  "optionalDependencies": {
-    "preview-email": "^3.1.0"
-  },
-  "overrides": {
-    "preview-email": {
-      "nodemailer": "^7.0.9"
-    }
   },
   "directories": {
     "lib": "./lib"
