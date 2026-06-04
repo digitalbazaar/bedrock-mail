@@ -1,5 +1,16 @@
 # bedrock-mail ChangeLog
 
+## 8.0.0 - 2026-06-dd
+
+### Changed
+- Update dependencies:
+  - `ejs@6.0.1`,
+  - `html-to-text@10.0.0`,
+  - `lru-cache@11.5.1`,
+  - `mailparser@3.9.9`,
+  - `nodemailer@8.0.10`,
+  - `open@11.0.0`.
+
 ## 7.1.2 - 2025-10-10
 
 ### Fixed

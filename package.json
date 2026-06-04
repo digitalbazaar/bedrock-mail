@@ -6,7 +6,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "test": "node test.js",
-    "lint": "eslint 'lib/*.js' test/*.js"
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,12 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
     "app-root-path": "^3.1.0",
-    "ejs": "^3.1.10",
-    "html-to-text": "^9.0.5",
-    "lru-cache": "^11.2.1",
-    "mailparser": "^3.7.5",
-    "nodemailer": "^7.0.9",
-    "open": "^10.2.0"
+    "ejs": "^6.0.1",
+    "html-to-text": "^10.0.0",
+    "lru-cache": "^11.5.1",
+    "mailparser": "^3.9.9",
+    "nodemailer": "^8.0.10",
+    "open": "^11.0.0"
   },
   "peerDependencies": {
     "@bedrock/core": "^6.0.0"
@@ -42,9 +42,7 @@
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
-    "eslint-config-digitalbazaar": "^5.2.0",
-    "eslint-plugin-jsdoc": "^50.4.1",
-    "jsdoc-to-markdown": "^9.0.2"
+    "@digitalbazaar/eslint-config": "^8.0.1",
+    "eslint": "^9.39.4"
   }
 }
