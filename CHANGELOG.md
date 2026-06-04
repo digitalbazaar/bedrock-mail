@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 8.0.0 - 2026-06-dd
+## 7.2.0 - 2026-06-dd
 
 ### Changed
 - Update dependencies:
