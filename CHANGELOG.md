@@ -1,5 +1,11 @@
 # bedrock-mail ChangeLog
 
+## 7.3.0 - 2026-mm-dd
+
+### Changed
+- Update to `nodemailer@9`. This change causes HTTPS/TLS certificates to
+  be checked by default (which was already the expected behavior).
+
 ## 7.2.0 - 2026-06-04
 
 ### Changed

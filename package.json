@@ -32,7 +32,7 @@
     "html-to-text": "^10.0.0",
     "lru-cache": "^11.5.1",
     "mailparser": "^3.9.9",
-    "nodemailer": "^8.0.10",
+    "nodemailer": "^9.0.5",
     "open": "^11.0.0"
   },
   "peerDependencies": {
