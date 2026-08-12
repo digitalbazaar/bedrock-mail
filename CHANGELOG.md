@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.3.0 - 2026-mm-dd
+## 7.3.0 - 2026-08-12
 
 ### Changed
 - Update to `nodemailer@9`. This change causes HTTPS/TLS certificates to
