@@ -4,6 +4,9 @@
   "type": "module",
   "description": "Bedrock mail",
   "main": "./lib/index.js",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "test": "node test.js",
     "lint": "eslint"
