@@ -1,5 +1,17 @@
 # bedrock-mail ChangeLog
 
+## 7.3.1 - 2026-08-xx
+
+### Changed
+- Update dependencies:
+  - `html-to-text@10.0.1`.
+  - `lru-cache@11.5.2`.
+  - `mailparser@3.9.15`.
+  - `open@11.0.1`.
+- Update peer dependencies.
+  - `@bedrock/core@6.3.0`.
+- Update dev and test dependencies.
+
 ## 7.3.0 - 2026-08-12
 
 ### Changed

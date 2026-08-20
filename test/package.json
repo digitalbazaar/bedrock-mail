@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mail",
   "dependencies": {
-    "@bedrock/core": "^6.0.0",
+    "@bedrock/core": "^6.3.0",
     "@bedrock/mail": "file:..",
-    "qrcode": "^1.4.4"
+    "qrcode": "^1.5.4"
   }
 }
