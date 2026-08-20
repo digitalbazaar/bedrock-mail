@@ -12,6 +12,9 @@
   - `@bedrock/core@6.3.0`.
 - Update dev and test dependencies.
 
+### Fixed
+- Add `files` field to limit distributed files.
+
 ## 7.3.0 - 2026-08-12
 
 ### Changed
