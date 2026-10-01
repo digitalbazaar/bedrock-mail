@@ -33,10 +33,10 @@
     "app-root-path": "^3.1.0",
     "ejs": "^6.0.1",
     "html-to-text": "^10.0.1",
-    "lru-cache": "^11.5.2",
-    "mailparser": "^3.9.15",
-    "nodemailer": "^9.0.5",
-    "open": "^11.0.1"
+    "lru-cache": "^11.5.3",
+    "mailparser": "^3.9.33",
+    "nodemailer": "^10.0.13",
+    "open": "^11.0.4"
   },
   "peerDependencies": {
     "@bedrock/core": "^6.3.0"

@@ -2,6 +2,9 @@
 
 ## 7.4.0 - 2026-10-dd
 
+- Update dependencies.
+  - `nodemailer@10.0.13`
+  - Other minor updates.
 - Update dev dependencies.
 
 ## 7.3.1 - 2026-08-21
