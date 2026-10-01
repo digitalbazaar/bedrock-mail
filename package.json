@@ -46,6 +46,6 @@
   },
   "devDependencies": {
     "@digitalbazaar/eslint-config": "^9.0.0",
-    "eslint": "^10.8.1"
+    "eslint": "^10.11.0"
   }
 }
