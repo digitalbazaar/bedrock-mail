@@ -1,6 +1,6 @@
 # bedrock-mail ChangeLog
 
-## 7.4.0 - 2026-10-dd
+## 7.4.0 - 2026-10-02
 
 - Update dependencies.
   - `nodemailer@10.0.13`
